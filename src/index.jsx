@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './App';
+import App from './components/App';
 
-const render = () => {
-  ReactDom.render(
+const renderCallback = () => {
+  render(
     <AppContainer>
       <App />
     </AppContainer>,
@@ -12,8 +12,8 @@ const render = () => {
   );
 };
 
-render();
+renderCallback();
 
 if (module.hot) {
-  module.hot.accept('./App', render);
+  module.hot.accept('./components/App', renderCallback);
 }
