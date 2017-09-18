@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from './style.less';
-import appStyles from '../App/style.less';
+import commonStyles from '../../assets/styles/common.less';
 
 const SearchPanel = () => (
   <div>
-    <div className={appStyles.row}>
-      <span className={appStyles.uppercase}>Find your movie</span>
+    <div className={commonStyles.row}>
+      <span className={commonStyles.uppercase}>Find your movie</span>
     </div>
-    <div className={appStyles.row}>
+    <div className={`${commonStyles.row} ${styles.inputContainer}`}>
       <input className={styles.searchInput} type="text" placeholder="Search" />
     </div>
-    <div className={`${appStyles.row} ${styles.searchControls}`}>
+    <div className={`${commonStyles.row} ${styles.searchControls}`}>
       <div className={styles.filter}>
-        <span className={appStyles.uppercase}>Search by</span>
+        <span className={commonStyles.uppercase}>Search by</span>
         <button className={styles.active}>Title</button>
         <button>Director</button>
       </div>

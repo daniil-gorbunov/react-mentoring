@@ -1,0 +1,28 @@
+@import '../../assets/styles/colors';
+
+.movie-preview {
+  color: @text-color-semi-dark;
+
+  .main-info {
+    display: flex;
+    justify-content: space-between;
+
+    .title{
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .year {
+      font-size: 0.7em;
+      border: 1px solid @text-color-semi-dark;
+      border-radius: 2px;
+      font-weight: bold;
+      line-height: 18px;
+      padding: 0 5px;
+    }
+  }
+
+  .genre {
+    font-size: 0.7em;
+  }
+}

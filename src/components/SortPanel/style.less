@@ -1,12 +1,21 @@
 @import '../../assets/styles/colors';
 
-.header {
-  padding: 10px 50px 20px;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ),
-  url("/src/assets/images/background.jpg");
+.sort-panel {
+  padding: 20px 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  color: @text-color-semi-dark;
+  font-weight: bold;
+
+  a {
+    color: @text-color-semi-dark;
+    text-decoration: none;
+    margin-left: 15px;
+  }
+
+  a.active {
+    color: @text-color-main;
+  }
 
   .title-container {
     display: flex;

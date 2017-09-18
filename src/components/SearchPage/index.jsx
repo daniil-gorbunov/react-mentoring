@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../Header';
-import MovieList from '../MovieList';
+import SearchResultsContainer from '../SearchResultsContainer';
 import Footer from '../Footer';
 
 const SearchPage = () => (
   <div>
     <Header />
-    <MovieList />
+    <SearchResultsContainer />
     <Footer />
   </div>
 );

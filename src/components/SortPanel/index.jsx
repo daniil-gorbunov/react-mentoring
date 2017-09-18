@@ -1,14 +1,15 @@
 import React from 'react';
+import styles from './style.less';
 
 const SortPanel = () => (
-  <div>
+  <div className={styles.sortPanel}>
     <div>
-      <span>7 items found</span>
+      <span>7 movies found</span>
     </div>
     <div>
       <span>Sort by</span>
       <a href="#">release date</a>
-      <a href="#">rating</a>
+      <a className={styles.active} href="#">rating</a>
     </div>
   </div>
 );

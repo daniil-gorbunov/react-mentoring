@@ -1,16 +1,17 @@
 import React from 'react';
+import styles from './style.less';
 
-const MoviePreview = () => (
-  <div>
+const MoviePreview = ({ movie }) => (
+  <div className={styles.moviePreview}>
     <div>
-      <img src="#" alt="Cover" />
+      <img src={movie.poster} alt="Cover" />
+    </div>
+    <div className={styles.mainInfo}>
+      <div className={styles.title}>{movie.show_title}</div>
+      <div className={styles.year}>{movie.release_year}</div>
     </div>
     <div>
-      <span>Title</span>
-      <span>Year</span>
-    </div>
-    <div>
-      <span>Genre</span>
+      <div className={styles.genre}>{movie.category}</div>
     </div>
   </div>
 );
