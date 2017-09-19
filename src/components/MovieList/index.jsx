@@ -7,8 +7,8 @@ const MovieList = ({ movieList }) => (
   <div className={styles.movieList}>
     <Row>
       {movieList.map(movie => (
-        <Col xs={4}>
-          <div key={movie.show_id} className={styles.moviePreviewContainer}>
+        <Col key={movie.show_id} xs={4}>
+          <div className={styles.moviePreviewContainer}>
             <MoviePreview movie={movie} />
           </div>
         </Col>
