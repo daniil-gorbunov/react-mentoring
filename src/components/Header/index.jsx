@@ -12,7 +12,7 @@ class Header extends React.Component {
       movie: null,
       isSearch: false,
     };
-    this.switchState = this.switchState.bind(this);
+    this.goSearch = this.goSearch.bind(this);
   }
 
   componentDidMount() {
@@ -20,13 +20,19 @@ class Header extends React.Component {
       .then((movie) => { this.setState({ movie }); });
   }
 
-  switchState() {
-    this.setState({isSearch: !this.state.isSearch});
+  goSearch() {
+    this.setState({ isSearch: !this.state.isSearch });
   }
 
   render() {
-    let searchButton = this.state.isSearch ? null : (<button onClick={this.switchState}>Search</button>);
-    let content = this.state.isSearch ? (<SearchPanel />) : (<MovieInfo movie={this.state.movie}/>);
+    const searchButton = this.state.isSearch
+      ? null
+      : <button onClick={this.goSearch}>Search</button>;
+
+    const content = this.state.isSearch
+      ? <SearchPanel />
+      : <MovieInfo movie={this.state.movie} />;
+
     return (
       <div>
         <div className={styles.header}>
@@ -41,10 +47,10 @@ class Header extends React.Component {
           {content}
         </div>
         <div className={styles.subHeaderContainer}>
-          <SubHeader/>
+          <SubHeader />
         </div>
       </div>
-    )
+    );
   }
 }
 

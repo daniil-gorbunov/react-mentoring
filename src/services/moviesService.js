@@ -8,6 +8,6 @@ export default {
 
   getMovie() {
     return Promise.resolve(movie);
-  }
+  },
 };
 
