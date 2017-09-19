@@ -1,0 +1,38 @@
+@import '../../assets/styles/colors';
+
+.movie-preview {
+  color: @text-color-semi-dark;
+  min-height: 460px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .poster {
+    height: 100%;
+  }
+
+  .text-info {
+    margin: 0 60px;
+
+    .main-info {
+      .title {
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .year {
+        font-size: 0.7em;
+        border: 1px solid @text-color-semi-dark;
+        border-radius: 2px;
+        font-weight: bold;
+        line-height: 18px;
+        padding: 0 5px;
+      }
+    }
+
+    .genre {
+      font-size: 0.7em;
+    }
+  }
+}

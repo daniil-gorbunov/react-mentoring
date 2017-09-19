@@ -1,0 +1,36 @@
+@import '../../assets/styles/colors';
+
+.search-panel {
+
+  .input-container {
+    padding-right: 50px;
+
+    .search-input {
+      background: @input-color-dark;
+      color: @text-color-light;
+      width: 100%;
+      height: 50px;
+      padding: 0 25px;
+      border-width: 0 0 1px 0;
+      border-color: #f00;
+      margin: 0 auto;
+    }
+  }
+
+  .search-controls {
+    button {
+      margin-left: 10px;
+      background-color: @button-color-default;
+      color: @text-color-light;
+      font-size: 0.8em;
+    }
+
+    .active {
+      background-color: @button-color-active;
+    }
+
+    span {
+      font-size: 0.8em;
+    }
+  }
+}

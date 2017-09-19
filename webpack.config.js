@@ -14,7 +14,6 @@ module.exports = {
       './index.jsx',
     ],
     vendor: ['lodash', 'moment'],
-    styles: './style.less',
   },
 
   output: {
@@ -54,13 +53,28 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
       }, {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules',
+        include: /flexboxgrid/,
+      }, {
         test: /\.less$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'less-loader'],
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                camelCase: 'dashes',
+              },
+            }, {
+              loader: 'less-loader',
+            },
+          ],
         }),
       }, {
-        test: /\.(ttf|eot|svg|woff|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(ttf|eot|svg|woff|png|jpg|jpeg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]?[hash]',
