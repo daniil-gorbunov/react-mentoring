@@ -1,8 +1,10 @@
 import React from 'react';
+import { Row, Col } from 'react-flexbox-grid';
 import SearchPanel from '../SearchPanel';
 import MovieInfo from '../MovieInfo';
 import SubHeader from '../SubHeader';
 import styles from './style.less';
+import commonStyles from '../../assets/styles/common.less';
 import moviesService from '../../services/moviesService';
 
 class Header extends React.Component {
@@ -27,7 +29,7 @@ class Header extends React.Component {
   render() {
     const searchButton = this.state.isSearch
       ? null
-      : <button onClick={this.goSearch}>Search</button>;
+      : <button className={styles.searchBtn} onClick={this.goSearch}>Search</button>;
 
     const content = this.state.isSearch
       ? <SearchPanel />
@@ -36,14 +38,16 @@ class Header extends React.Component {
     return (
       <div>
         <div className={styles.header}>
-          <div className={styles.titleContainer}>
-            <div className={styles.title}>
-              <span>netflixroulette</span>
-            </div>
-            <div className={styles.search}>
-              {searchButton}
-            </div>
-          </div>
+          <Row between="xs">
+            <Col xs={2}>
+              <span className={styles.title}>netflixroulette</span>
+            </Col>
+            <Col xs={2}>
+              <div className={commonStyles.textRight}>
+                {searchButton}
+              </div>
+            </Col>
+          </Row>
           {content}
         </div>
         <div className={styles.subHeaderContainer}>

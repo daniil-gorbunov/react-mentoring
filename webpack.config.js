@@ -53,6 +53,10 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
       }, {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader?modules',
+        include: /flexboxgrid/,
+      }, {
         test: /\.less$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',

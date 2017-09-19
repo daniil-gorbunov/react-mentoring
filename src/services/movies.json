@@ -96,5 +96,19 @@
     "poster": "http://netflixroulette.net/api/posters/70230640.jpg",
     "mediatype": 0,
     "runtime": "N/A"
+  },
+  {
+    "unit": 17300,
+    "show_id": 70230641,
+    "show_title": "Django Unchained",
+    "release_year": "2012",
+    "rating": "4.0",
+    "category": "Dramas",
+    "show_cast": "Jamie Foxx, Christoph Waltz, Leonardo DiCaprio, Kerry Washington, Samuel L. Jackson, Walton Goggins, Dennis Christopher, James Remar, Michael Parks, Don Johnson",
+    "director": "Quentin Tarantino",
+    "summary": "Accompanied by a German bounty hunter, a freed slave named Django travels across America to free his wife from a sadistic plantation owner.",
+    "poster": "http://netflixroulette.net/api/posters/70230640.jpg",
+    "mediatype": 0,
+    "runtime": "N/A"
   }
 ]
