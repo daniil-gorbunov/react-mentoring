@@ -14,7 +14,6 @@ module.exports = {
       './index.jsx',
     ],
     vendor: ['lodash', 'moment'],
-    // styles: './style.less',
   },
 
   output: {
