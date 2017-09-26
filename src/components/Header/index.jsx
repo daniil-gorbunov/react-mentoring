@@ -35,8 +35,7 @@ class Header extends React.Component {
         <div className={styles.subHeaderContainer}>
           <Switch>
             <Route path="/film/:filmName" component={ResultPanel} />
-            <Route path="/search(/:searchQuery)" component={SortPanel} />
-            <Route path="/" component={SortPanel} />
+            <Route path="/search/:searchQuery" component={SortPanel} />
           </Switch>
         </div>
       </div>

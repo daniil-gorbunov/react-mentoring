@@ -8,8 +8,24 @@ class SearchPanel extends React.Component {
   constructor() {
     super();
     this.state = {
+      activeSearchType: 'title',
       searchQuery: '',
     };
+    this.searchTypes = [
+      {
+        title: 'title',
+        value: 'title',
+      }, {
+        title: 'director',
+        value: 'director',
+      },
+    ];
+    this.setActive = this.setActive.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  setActive(searchType) {
+    this.setState({ activeSearchType: searchType });
   }
 
   handleChange(event) {
@@ -48,12 +64,20 @@ class SearchPanel extends React.Component {
           <Row className={commonStyles.row}>
             <Col xs={6}>
               <span className={commonStyles.uppercase}>Search by</span>
-              <button className={styles.active}>Title</button>
-              <button>Director</button>
+              {this.searchTypes.map((type) => {
+                const isActive = type.value === this.state.activeSearchType;
+                return (
+                  <button
+                    key={type.value}
+                    className={`${isActive && styles.active}`}
+                    onClick={() => this.setActive(type.value)}
+                  >{type.title}</button>
+                );
+              })}
             </Col>
             <Col xs={6}>
               <div className={commonStyles.textRight}>
-                <Link to={`/search/${this.state.searchQuery}`}>
+                <Link to={`/search/${encodeURIComponent(this.state.searchQuery)}`}>
                   <button className={styles.active}>Search</button>
                 </Link>
               </div>

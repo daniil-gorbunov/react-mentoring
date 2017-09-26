@@ -1,13 +1,22 @@
 @import '../../assets/styles/colors';
 
 .sort-panel {
-  a {
+  .sorting-option {
     color: @text-color-semi-dark;
-    text-decoration: none;
+    background: transparent;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: lowercase;
+    padding: 0;
     margin-left: 15px;
+    font-size: 1em;
   }
 
-  a.active {
+  .sorting-option:focus{
+    outline: 0;
+  }
+
+  .sorting-option.active {
     color: @text-color-main;
   }
 }

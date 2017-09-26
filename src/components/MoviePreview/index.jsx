@@ -6,7 +6,7 @@ import styles from './style.less';
 
 const MoviePreview = ({ movie }) => (
   <div className={styles.moviePreview}>
-    <Link to={`/film/${movie.show_title}`}>
+    <Link to={`/film/${encodeURIComponent(movie.show_title)}`}>
       <div>
         <Row>
           <Col xs={12}>
