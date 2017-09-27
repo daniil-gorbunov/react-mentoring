@@ -1,15 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import SearchPage from '../SearchPage';
 
 const App = () => (
-  <Grid>
-    <Row>
-      <Col xs={12}>
-        <SearchPage />
-      </Col>
-    </Row>
-  </Grid>
+  <Router>
+    <Grid>
+      <Row>
+        <Col xs={12}>
+          <Route path="/" component={SearchPage} />
+        </Col>
+      </Row>
+    </Grid>
+  </Router>
 );
 
 export default App;

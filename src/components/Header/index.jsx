@@ -1,10 +1,10 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
-import SearchPanel from '../SearchPanel';
+import { Route, Switch } from 'react-router-dom';
 import MovieInfo from '../MovieInfo';
-import SubHeader from '../SubHeader';
+import ResultPanel from '../ResultPanel';
+import SearchPanel from '../SearchPanel';
+import SortPanel from '../SortPanel';
 import styles from './style.less';
-import commonStyles from '../../assets/styles/common.less';
 import moviesService from '../../services/moviesService';
 
 class Header extends React.Component {
@@ -12,9 +12,7 @@ class Header extends React.Component {
     super();
     this.state = {
       movie: null,
-      isSearch: false,
     };
-    this.goSearch = this.goSearch.bind(this);
   }
 
   componentDidMount() {
@@ -22,36 +20,23 @@ class Header extends React.Component {
       .then((movie) => { this.setState({ movie }); });
   }
 
-  goSearch() {
-    this.setState({ isSearch: !this.state.isSearch });
-  }
-
   render() {
-    const searchButton = this.state.isSearch
-      ? null
-      : <button className={styles.searchBtn} onClick={this.goSearch}>Search</button>;
-
-    const content = this.state.isSearch
-      ? <SearchPanel />
-      : <MovieInfo movie={this.state.movie} />;
-
     return (
       <div>
         <div className={styles.header}>
-          <Row between="xs">
-            <Col xs={2}>
-              <span className={styles.title}>netflixroulette</span>
-            </Col>
-            <Col xs={2}>
-              <div className={commonStyles.textRight}>
-                {searchButton}
-              </div>
-            </Col>
-          </Row>
-          {content}
+          <Switch>
+            <Route path="/film/:filmName">
+              <MovieInfo movie={this.state.movie} />
+            </Route>
+            <Route path="/search/:searchQuery" component={SearchPanel} />
+            <Route path="/" component={SearchPanel} />
+          </Switch>
         </div>
         <div className={styles.subHeaderContainer}>
-          <SubHeader />
+          <Switch>
+            <Route path="/film/:filmName" component={ResultPanel} />
+            <Route path="/search/:searchQuery" component={SortPanel} />
+          </Switch>
         </div>
       </div>
     );
