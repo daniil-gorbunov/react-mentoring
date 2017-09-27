@@ -23,6 +23,9 @@ class SearchResultsContainer extends React.Component {
           <Route exact path="/search/:searchQuery">
             <MovieList movieList={this.state.movieList} />
           </Route>
+          <Route exact path="/film/:filmName">
+            <MovieList movieList={this.state.movieList} />
+          </Route>
           <Route path="/">
             <MovieList movieList={[]} />
           </Route>
