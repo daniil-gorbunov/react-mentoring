@@ -1,92 +1,98 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
+import { setSearchQuery, setSearchType } from '../../actions';
 import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
+import { TITLE, DIRECTOR } from '../../constants/searchTypes';
 
-class SearchPanel extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      activeSearchType: 'title',
-      searchQuery: '',
-    };
-    this.searchTypes = [
-      {
-        title: 'title',
-        value: 'title',
-      }, {
-        title: 'director',
-        value: 'director',
-      },
-    ];
-    this.setActive = this.setActive.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
+const searchTypesList = [
+  {
+    title: 'title',
+    value: TITLE,
+  }, {
+    title: 'director',
+    value: DIRECTOR,
+  },
+];
 
-  setActive(searchType) {
-    this.setState({ activeSearchType: searchType });
-  }
-
-  handleChange(event) {
-    this.setState({
-      searchQuery: event.target.value,
-    });
-  }
-
-  render() {
-    return (
-      <div className={styles.searchPanel}>
-        <Row className={commonStyles.row}>
-          <Col xs={2}>
-            <span className={styles.title}>netflixroulette</span>
-          </Col>
-        </Row>
-        <Row className={commonStyles.row}>
-          <Col xs={12}>
-            <span className={`${commonStyles.uppercase} ${styles.searchTitle}`}>Find your movie</span>
-          </Col>
-        </Row>
-        <Row className={commonStyles.row}>
-          <Col xs={12}>
-            <div className={styles.inputContainer}>
-              <input
-                className={styles.searchInput}
-                value={this.state.searchQuery}
-                onChange={this.handleChange}
-                type="text"
-                placeholder="Search"
-              />
-            </div>
-          </Col>
-        </Row>
-        <div className={styles.searchControls}>
-          <Row className={commonStyles.row}>
-            <Col xs={6}>
-              <span className={commonStyles.uppercase}>Search by</span>
-              {this.searchTypes.map((type) => {
-                const isActive = type.value === this.state.activeSearchType;
-                return (
-                  <button
-                    key={type.value}
-                    className={`${isActive && styles.active}`}
-                    onClick={() => this.setActive(type.value)}
-                  >{type.title}</button>
-                );
-              })}
-            </Col>
-            <Col xs={6}>
-              <div className={commonStyles.textRight}>
-                <Link to={`/search/${encodeURIComponent(this.state.searchQuery)}`}>
-                  <button className={styles.active}>Search</button>
-                </Link>
-              </div>
-            </Col>
-          </Row>
+const Search = ({ searchType, searchQuery, onQueryChange, onSearchTypeClick }) => (
+  <div className={styles.searchPanel}>
+    <Row className={commonStyles.row}>
+      <Col xs={2}>
+        <span className={styles.title}>netflixroulette</span>
+      </Col>
+    </Row>
+    <Row className={commonStyles.row}>
+      <Col xs={12}>
+        <span className={`${commonStyles.uppercase} ${styles.searchTitle}`}>Find your movie</span>
+      </Col>
+    </Row>
+    <Row className={commonStyles.row}>
+      <Col xs={12}>
+        <div className={styles.inputContainer}>
+          <input
+            className={styles.searchInput}
+            value={searchQuery}
+            onInput={e => onQueryChange(e.target.value)}
+            type="text"
+            placeholder="Search"
+          />
         </div>
-      </div>
-    );
-  }
-}
+      </Col>
+    </Row>
+    <div className={styles.searchControls}>
+      <Row className={commonStyles.row}>
+        <Col xs={6}>
+          <span className={commonStyles.uppercase}>Search by</span>
+          {searchTypesList.map((type) => {
+            const isActive = type.value === searchType;
+            return (
+              <button
+                key={type.value}
+                className={`${isActive && styles.active}`}
+                onClick={() => onSearchTypeClick(type.value)}
+              >{type.title}</button>
+            );
+          })}
+        </Col>
+        <Col xs={6}>
+          <div className={commonStyles.textRight}>
+            <Link to={`/search/${encodeURIComponent(searchQuery)}`}>
+              <button className={styles.active}>Search</button>
+            </Link>
+          </div>
+        </Col>
+      </Row>
+    </div>
+  </div>
+);
+
+Search.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+  searchType: PropTypes.string.isRequired,
+  onQueryChange: PropTypes.func.isRequired,
+  onSearchTypeClick: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  searchQuery: state.searchQuery,
+  searchType: state.searchType,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onQueryChange: (query) => {
+    dispatch(setSearchQuery(query));
+  },
+  onSearchTypeClick: (searchType) => {
+    dispatch(setSearchType(searchType));
+  },
+});
+
+const SearchPanel = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Search);
 
 export default SearchPanel;

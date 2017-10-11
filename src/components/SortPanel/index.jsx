@@ -1,58 +1,66 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Row, Col } from 'react-flexbox-grid';
+import { connect } from 'react-redux';
+import { setSortType } from '../../actions';
 import commonStyles from '../../assets/styles/common.less';
 import styles from './style.less';
+import { DATE, RATING } from '../../constants/sortTypes';
 
-class SortPanel extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      activeSorting: 'rating',
-    };
-    this.sortingOtions = [
-      {
-        title: 'release date',
-        value: 'release_date',
-      }, {
-        title: 'rating',
-        value: 'rating',
-      },
-    ];
-    this.setActive = this.setActive.bind(this);
-  }
+const sortOptionsList = [
+  {
+    title: 'release date',
+    value: DATE,
+  }, {
+    title: 'rating',
+    value: RATING,
+  },
+];
 
-  setActive(sorting) {
-    this.setState({ activeSorting: sorting });
-  }
+const SortOptions = ({ sortType, onClick }) => (
+  <div className={styles.sortPanel}>
+    <Row between="xs">
+      <Col xs={2}>
+        <span>7 movies found</span>
+      </Col>
+      <Col xs={4}>
+        <div className={commonStyles.textRight}>
+          <span>Sort by</span>
+          {sortOptionsList.map((option) => {
+            const isActive = option.value === sortType;
+            const classStr = `${styles.sortingOption} ${isActive && styles.active}`;
+            return (
+              <button
+                key={option.value}
+                className={classStr}
+                onClick={() => onClick(option.value)}
+                href="#"
+              >{option.title}</button>
+            );
+          })}
+        </div>
+      </Col>
+    </Row>
+  </div>
+);
 
-  render() {
-    return (
-      <div className={styles.sortPanel}>
-        <Row between="xs">
-          <Col xs={2}>
-            <span>7 movies found</span>
-          </Col>
-          <Col xs={4}>
-            <div className={commonStyles.textRight}>
-              <span>Sort by</span>
-              {this.sortingOtions.map((option) => {
-                const isActive = option.value === this.state.activeSorting;
-                const classStr = `${styles.sortingOption} ${isActive && styles.active}`;
-                return (
-                  <button
-                    key={option.value}
-                    className={classStr}
-                    onClick={() => this.setActive(option.value)}
-                    href="#"
-                  >{option.title}</button>
-                );
-              })}
-            </div>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
-}
+SortOptions.propTypes = {
+  sortType: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  sortType: state.sortType,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onClick: (sortType) => {
+    dispatch(setSortType(sortType));
+  },
+});
+
+const SortPanel = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SortOptions);
 
 export default SortPanel;
