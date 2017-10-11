@@ -6,6 +6,7 @@ import { setSortType } from '../../actions';
 import commonStyles from '../../assets/styles/common.less';
 import styles from './style.less';
 import { DATE, RATING } from '../../constants/sortTypes';
+import movieType from '../../types/movieType';
 
 const sortOptionsList = [
   {
@@ -17,11 +18,11 @@ const sortOptionsList = [
   },
 ];
 
-const SortOptions = ({ sortType, onClick }) => (
+const SortOptions = ({ sortType, movies, onClick }) => (
   <div className={styles.sortPanel}>
     <Row between="xs">
       <Col xs={2}>
-        <span>7 movies found</span>
+        <span>{movies.length} movies found</span>
       </Col>
       <Col xs={4}>
         <div className={commonStyles.textRight}>
@@ -46,11 +47,13 @@ const SortOptions = ({ sortType, onClick }) => (
 
 SortOptions.propTypes = {
   sortType: PropTypes.string.isRequired,
+  movies: PropTypes.arrayOf(movieType).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   sortType: state.sortType,
+  movies: state.movies,
 });
 
 const mapDispatchToProps = dispatch => ({

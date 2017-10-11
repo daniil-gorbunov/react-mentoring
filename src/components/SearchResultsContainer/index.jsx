@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
-import movieType from '../../types/movieType';
 import MoviePreview from '../MoviePreview';
 import styles from './style.less';
+import movieType from '../../types/movieType';
 
 const MovieList = ({ movies }) => (
   <div className={styles.movieList}>
