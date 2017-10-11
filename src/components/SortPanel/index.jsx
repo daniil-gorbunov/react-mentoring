@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import { connect } from 'react-redux';
 import { setSortType } from '../../actions';

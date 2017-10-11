@@ -1,8 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
-import { setSearchQuery, setSearchType } from '../../actions';
+import { setSearchQuery, setSearchType, searchMovies } from '../../actions';
 import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
 import { TITLE, DIRECTOR } from '../../constants/searchTypes';
@@ -17,7 +18,7 @@ const searchTypesList = [
   },
 ];
 
-const Search = ({ searchType, searchQuery, onQueryChange, onSearchTypeClick }) => (
+const Search = ({ searchType, searchQuery, onQueryChange, onSearchTypeClick, onSearchClick }) => (
   <div className={styles.searchPanel}>
     <Row className={commonStyles.row}>
       <Col xs={2}>
@@ -60,7 +61,10 @@ const Search = ({ searchType, searchQuery, onQueryChange, onSearchTypeClick }) =
         <Col xs={6}>
           <div className={commonStyles.textRight}>
             <Link to={`/search/${encodeURIComponent(searchQuery)}`}>
-              <button className={styles.active}>Search</button>
+              <button
+                className={styles.active}
+                onClick={() => { onSearchClick(searchQuery, searchType); }}
+              >Search</button>
             </Link>
           </div>
         </Col>
@@ -74,6 +78,7 @@ Search.propTypes = {
   searchType: PropTypes.string.isRequired,
   onQueryChange: PropTypes.func.isRequired,
   onSearchTypeClick: PropTypes.func.isRequired,
+  onSearchClick: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -87,6 +92,9 @@ const mapDispatchToProps = dispatch => ({
   },
   onSearchTypeClick: (searchType) => {
     dispatch(setSearchType(searchType));
+  },
+  onSearchClick: (searchQuery, searchType) => {
+    searchMovies(dispatch, searchQuery, searchType);
   },
 });
 

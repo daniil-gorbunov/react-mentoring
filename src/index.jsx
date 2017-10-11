@@ -11,11 +11,11 @@ import appReducers from './reducers';
 
 const initialState = {
   movies: [],
+  searchMovies: [],
   movie: null,
   searchQuery: '',
   searchType: TITLE,
   sortType: RATING,
-
 };
 const store = createStore(appReducers, initialState);
 
