@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import { connect } from 'react-redux';
-import { setSortType } from '../../actions';
+import { setSortType, sortMovies } from '../../actions';
 import commonStyles from '../../assets/styles/common.less';
 import styles from './style.less';
 import { DATE, RATING } from '../../constants/sortTypes';
@@ -18,7 +18,7 @@ const sortOptionsList = [
   },
 ];
 
-const SortOptions = ({ sortType, movies, onClick }) => (
+const SortOptions = ({ sortType, movies, onSortTypeClick }) => (
   <div className={styles.sortPanel}>
     <Row between="xs">
       <Col xs={2}>
@@ -34,7 +34,7 @@ const SortOptions = ({ sortType, movies, onClick }) => (
               <button
                 key={option.value}
                 className={classStr}
-                onClick={() => onClick(option.value)}
+                onClick={() => onSortTypeClick(movies, option.value)}
                 href="#"
               >{option.title}</button>
             );
@@ -46,9 +46,13 @@ const SortOptions = ({ sortType, movies, onClick }) => (
 );
 
 SortOptions.propTypes = {
-  sortType: PropTypes.string.isRequired,
+  sortType: PropTypes.string,
   movies: PropTypes.arrayOf(movieType).isRequired,
-  onClick: PropTypes.func.isRequired,
+  onSortTypeClick: PropTypes.func.isRequired,
+};
+
+SortOptions.defaultProps = {
+  sortType: null,
 };
 
 const mapStateToProps = state => ({
@@ -57,8 +61,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClick: (sortType) => {
+  onSortTypeClick: (movies, sortType) => {
     dispatch(setSortType(sortType));
+    dispatch(sortMovies(movies, sortType));
   },
 });
 

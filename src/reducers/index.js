@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { searchQuery, searchType, movies } from './search';
-import sortType from './sortType';
+import sortType from './sort';
 
 const appReducers = combineReducers({
   searchQuery,

@@ -5,19 +5,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './assets/styles/common.less';
 import App from './components/App';
-import { TITLE } from './constants/searchTypes';
-import { RATING } from './constants/sortTypes';
 import appReducers from './reducers';
 
-const initialState = {
-  movies: [],
-  searchMovies: [],
-  movie: null,
-  searchQuery: '',
-  searchType: TITLE,
-  sortType: RATING,
-};
-const store = createStore(appReducers, initialState);
+const store = createStore(appReducers);
 
 const renderCallback = () => {
   render(

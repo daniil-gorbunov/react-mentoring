@@ -1,7 +1,6 @@
 import { CHANGE_SORT_TYPE } from '../constants/actionTypes';
-import { RATING } from '../constants/sortTypes';
 
-const sortType = (state = RATING, action) => {
+export default (state = null, action) => {
   switch (action.type) {
     case CHANGE_SORT_TYPE:
       return action.sortType;
@@ -9,5 +8,3 @@ const sortType = (state = RATING, action) => {
       return state;
   }
 };
-
-export default sortType;

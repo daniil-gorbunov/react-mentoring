@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 export default PropTypes.shape({
-  unit: PropTypes.number.isRequired,
-  show_id: PropTypes.number.isRequired,
+  unit: PropTypes.number,
+  show_id: PropTypes.number,
   show_title: PropTypes.string,
   release_year: PropTypes.string,
   rating: PropTypes.string,

@@ -1,5 +1,12 @@
 import { isArray } from 'lodash';
-import { CHANGE_SEARCH_QUERY, CHANGE_SEARCH_TYPE, CHANGE_SORT_TYPE, SEARCH_MOVIES } from '../constants/actionTypes';
+import axios from 'axios';
+import {
+  CHANGE_SEARCH_QUERY,
+  CHANGE_SEARCH_TYPE,
+  CHANGE_SORT_TYPE,
+  SORT_MOVIES,
+  SEARCH_MOVIES,
+} from '../constants/actionTypes';
 import { SEARCH_TYPE_PARAMS_MAP } from '../constants/searchTypes';
 import API_BASE_URL from '../constants/apiUrls';
 
@@ -18,6 +25,12 @@ export const setSortType = sortType => ({
   sortType,
 });
 
+export const sortMovies = (movies, sortType) => ({
+  type: SORT_MOVIES,
+  sortType,
+  movies,
+});
+
 export const searchMovies = (dispatch, searchQuery, searchType) => {
   dispatch({
     type: 'SEARCH_STARTED',
@@ -26,15 +39,11 @@ export const searchMovies = (dispatch, searchQuery, searchType) => {
   const params = {
     [SEARCH_TYPE_PARAMS_MAP[searchType]]: searchQuery,
   };
-  const query = Object.keys(params)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-    .join('&');
 
-  fetch(`${API_BASE_URL}?${query}`)
-    .then(response => response.json())
-    .then(movies => dispatch({
+  axios.get(API_BASE_URL, { params })
+    .then(({ data }) => dispatch({
       type: SEARCH_MOVIES,
-      movies: isArray(movies) ? movies : [movies],
+      movies: isArray(data) ? data : [data],
     }))
     .catch(() => dispatch({
       type: SEARCH_MOVIES,
