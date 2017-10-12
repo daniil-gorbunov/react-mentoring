@@ -8,7 +8,7 @@ import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
 import movieType from '../../types/movieType';
 
-const Movie = ({ movie, onClick }) => (
+const Movie = ({ movie, onSearchClick }) => (
 
   <div className={styles.movieInfo}>
     <Row className={commonStyles.row} between="xs">
@@ -20,7 +20,7 @@ const Movie = ({ movie, onClick }) => (
           <Link to="/">
             <button
               className={styles.searchBtn}
-              onClick={onClick}
+              onClick={onSearchClick}
             >Search</button>
           </Link>
         </div>
@@ -56,7 +56,7 @@ const Movie = ({ movie, onClick }) => (
 
 Movie.propTypes = {
   movie: movieType.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onSearchClick: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -64,7 +64,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClick: () => dispatch(clearSearch()),
+  onSearchClick: () => dispatch(clearSearch()),
 });
 
 const MovieInfo = connect(
