@@ -87,15 +87,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onQueryChange: (query) => {
-    dispatch(setSearchQuery(query));
-  },
-  onSearchTypeClick: (searchType) => {
-    dispatch(setSearchType(searchType));
-  },
-  onSearchClick: (searchQuery, searchType) => {
-    searchMovies(dispatch, searchQuery, searchType);
-  },
+  onQueryChange: query => dispatch(setSearchQuery(query)),
+  onSearchTypeClick: searchType => dispatch(setSearchType(searchType)),
+  onSearchClick: (searchQuery, searchType) => searchMovies(dispatch, searchQuery, searchType),
 });
 
 const SearchPanel = connect(

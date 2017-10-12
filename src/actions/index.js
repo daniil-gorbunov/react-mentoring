@@ -6,6 +6,8 @@ import {
   CHANGE_SORT_TYPE,
   SORT_MOVIES,
   SEARCH_MOVIES,
+  OPEN_MOVIE,
+  CLEAR_SEARCH,
 } from '../constants/actionTypes';
 import { SEARCH_TYPE_PARAMS_MAP } from '../constants/searchTypes';
 import API_BASE_URL from '../constants/apiUrls';
@@ -50,3 +52,12 @@ export const searchMovies = (dispatch, searchQuery, searchType) => {
       movies: [],
     }));
 };
+
+export const openMovie = movie => ({
+  type: OPEN_MOVIE,
+  movie,
+});
+
+export const clearSearch = () => ({
+  type: CLEAR_SEARCH,
+});

@@ -3,3 +3,5 @@ export const CHANGE_SEARCH_TYPE = 'CHANGE_SEARCH_TYPE';
 export const CHANGE_SORT_TYPE = 'CHANGE_SORT_TYPE';
 export const SORT_MOVIES = 'SORT_MOVIES';
 export const SEARCH_MOVIES = 'SEARCH_MOVIES';
+export const OPEN_MOVIE = 'OPEN_MOVIE';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';

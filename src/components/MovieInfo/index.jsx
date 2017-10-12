@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
+import { clearSearch } from '../../actions';
 import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
+import movieType from '../../types/movieType';
 
-const MovieInfo = ({ movie }) => movie && (
+const Movie = ({ movie, onClick }) => (
 
   <div className={styles.movieInfo}>
     <Row className={commonStyles.row} between="xs">
@@ -14,7 +18,10 @@ const MovieInfo = ({ movie }) => movie && (
       <Col xs={2}>
         <div className={commonStyles.textRight}>
           <Link to="/">
-            <button className={styles.searchBtn}>Search</button>
+            <button
+              className={styles.searchBtn}
+              onClick={onClick}
+            >Search</button>
           </Link>
         </div>
       </Col>
@@ -46,5 +53,23 @@ const MovieInfo = ({ movie }) => movie && (
     </Row>
   </div>
 );
+
+Movie.propTypes = {
+  movie: movieType.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  movie: state.movie,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onClick: () => dispatch(clearSearch()),
+});
+
+const MovieInfo = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Movie);
 
 export default MovieInfo;
