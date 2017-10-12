@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
-import { DIRECTOR } from '../../constants/searchTypes';
-import { openMovie, searchMovies } from '../../actions';
 import commonStyles from '../../assets/styles/common.less';
 import styles from './style.less';
 import movieType from '../../types/movieType';
 
-const Movie = ({ movie, onMovieClick }) => (
+const MoviePreview = ({ movie, onMovieClick }) => (
   <div className={styles.moviePreview}>
     <Link
       to={`/film/${encodeURIComponent(movie.show_title)}`}
@@ -53,29 +50,13 @@ const Movie = ({ movie, onMovieClick }) => (
   </div>
 );
 
-Movie.propTypes = {
+MoviePreview.propTypes = {
   movie: movieType,
   onMovieClick: PropTypes.func.isRequired,
 };
 
-Movie.defaultProps = {
+MoviePreview.defaultProps = {
   movie: null,
 };
-
-const mapStateToProps = (state, ownProps) => ({
-  movie: ownProps.movie || state.movie,
-});
-
-const mapDispatchToProps = dispatch => ({
-  onMovieClick: (movie) => {
-    dispatch(openMovie(movie));
-    searchMovies(dispatch, movie.director, DIRECTOR);
-  },
-});
-
-const MoviePreview = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Movie);
 
 export default MoviePreview;
