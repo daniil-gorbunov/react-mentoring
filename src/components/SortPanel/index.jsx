@@ -18,7 +18,7 @@ const sortOptionsList = [
   },
 ];
 
-const SortOptions = ({ sortType, movies, onSortTypeClick }) => (
+const SortPanel = ({ sortType, movies, onSortTypeClick }) => (
   <div className={styles.sortPanel}>
     <Row between="xs">
       <Col xs={2}>
@@ -45,13 +45,13 @@ const SortOptions = ({ sortType, movies, onSortTypeClick }) => (
   </div>
 );
 
-SortOptions.propTypes = {
+SortPanel.propTypes = {
   sortType: PropTypes.string,
   movies: PropTypes.arrayOf(movieType).isRequired,
   onSortTypeClick: PropTypes.func.isRequired,
 };
 
-SortOptions.defaultProps = {
+SortPanel.defaultProps = {
   sortType: null,
 };
 
@@ -67,9 +67,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const SortPanel = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(SortOptions);
-
-export default SortPanel;
+)(SortPanel);

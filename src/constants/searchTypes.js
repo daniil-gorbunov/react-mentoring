@@ -1,6 +1,6 @@
-export const TITLE = 'TITLE';
-export const DIRECTOR = 'DIRECTOR';
+export const MOVIE = 'MOVIE';
+export const TV_SHOW = 'TV';
 export const SEARCH_TYPE_PARAMS_MAP = {
-  [TITLE]: 'title',
-  [DIRECTOR]: 'director',
+  [MOVIE]: 'movie',
+  [TV_SHOW]: 'tv',
 };

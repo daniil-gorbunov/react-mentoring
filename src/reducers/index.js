@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
 import { searchQuery, searchType, movies, movie, sortType } from './common';
 
-const appReducers = combineReducers({
+export default combineReducers({
   searchQuery,
   searchType,
   movies,
   movie,
   sortType,
 });
-
-export default appReducers;

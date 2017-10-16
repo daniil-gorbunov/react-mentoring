@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,8 +8,9 @@ import { clearSearch } from '../../actions';
 import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
 import movieType from '../../types/movieType';
+import { IMG_URL, NO_IMAGE_PATH, POSTER_SIZE } from '../../constants/config';
 
-const Movie = ({ movie, onSearchClick }) => (
+const MoviePreview = ({ movie, onSearchClick }) => (
 
   <div className={styles.movieInfo}>
     <Row className={commonStyles.row} between="xs">
@@ -28,33 +30,36 @@ const Movie = ({ movie, onSearchClick }) => (
     </Row>
     <Row className={commonStyles.row}>
       <Col xs={4}>
-        <img src={movie.poster} alt={movie.show_title} />
+        <img
+          className={styles.poster}
+          src={movie.poster_path ? `${IMG_URL}${POSTER_SIZE}${movie.poster_path}` : NO_IMAGE_PATH}
+          alt={movie.original_title}
+        />
       </Col>
       <Col xs={8}>
         <div>
-          <span className={styles.movieTtitle}>{movie.show_title}</span>
-          <span className={styles.rating}>{movie.rating}</span>
+          <span className={styles.movieTitle}>{movie.original_title}</span>
+          <div className={styles.rating}>{movie.vote_average}</div>
         </div>
         <div>
-          <span className={styles.category}>{movie.category}</span>
+          <span className={styles.category}>{movie.vote_count} votes</span>
         </div>
         <div className={styles.subHeader}>
-          <span className={styles.year}>{movie.release_year}</span>
-          <span className={styles.runtime}>{movie.runtime}</span>
+          <span className={styles.year}>{moment(movie.release_date).format('YYYY')}</span>
         </div>
         <div>
-          <p>{movie.summary}</p>
+          <p>{movie.overview}</p>
         </div>
         <div className={styles.cast}>
-          <p>{movie.director}</p>
-          <p>{movie.show_cast}</p>
+          <p>Popularity: {movie.popularity}</p>
+          <p>Language: {movie.original_language}</p>
         </div>
       </Col>
     </Row>
   </div>
 );
 
-Movie.propTypes = {
+MoviePreview.propTypes = {
   movie: movieType.isRequired,
   onSearchClick: PropTypes.func.isRequired,
 };
@@ -67,9 +72,7 @@ const mapDispatchToProps = dispatch => ({
   onSearchClick: () => dispatch(clearSearch()),
 });
 
-const MovieInfo = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Movie);
-
-export default MovieInfo;
+)(MoviePreview);

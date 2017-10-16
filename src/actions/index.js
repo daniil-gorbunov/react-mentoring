@@ -1,4 +1,3 @@
-import { isArray } from 'lodash';
 import axios from 'axios';
 import {
   CHANGE_SEARCH_QUERY,
@@ -10,7 +9,8 @@ import {
   CLEAR_SEARCH,
 } from '../constants/actionTypes';
 import { SEARCH_TYPE_PARAMS_MAP } from '../constants/searchTypes';
-import API_BASE_URL from '../constants/apiUrls';
+import { BASE_URL, V3_KEY } from '../constants/api';
+import buildMovie from '../services/moviesService';
 
 export const setSearchQuery = searchQuery => ({
   type: CHANGE_SEARCH_QUERY,
@@ -39,13 +39,14 @@ export const searchMovies = (dispatch, searchQuery, searchType) => {
   });
 
   const params = {
-    [SEARCH_TYPE_PARAMS_MAP[searchType]]: searchQuery,
+    api_key: V3_KEY,
+    query: searchQuery,
   };
 
-  axios.get(API_BASE_URL, { params })
-    .then(({ data }) => dispatch({
+  axios.get(`${BASE_URL}search/${SEARCH_TYPE_PARAMS_MAP[searchType]}`, { params })
+    .then(({ data: { results } }) => dispatch({
       type: SEARCH_MOVIES,
-      movies: isArray(data) ? data : [data],
+      movies: results.map(md => buildMovie(md)),
     }))
     .catch(() => dispatch({
       type: SEARCH_MOVIES,

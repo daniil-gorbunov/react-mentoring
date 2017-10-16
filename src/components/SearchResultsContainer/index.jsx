@@ -2,18 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-flexbox-grid';
-import { DIRECTOR } from '../../constants/searchTypes';
-import { openMovie, searchMovies } from '../../actions';
+import { openMovie } from '../../actions';
 import MoviePreview from '../MoviePreview';
 import styles from './style.less';
 import movieType from '../../types/movieType';
 
-const MovieList = ({ movies, onMovieClick }) => (
+const SearchResultsContainer = ({ movies, onMovieClick }) => (
   <div className={styles.movieList}>
     <Row>
       {movies.length
         ? movies.map(movie => (
-          <Col key={movie.show_id} xs={4}>
+          <Col key={movie.id} xs={4}>
             <div className={styles.moviePreviewContainer}>
               <MoviePreview
                 movie={movie}
@@ -34,7 +33,7 @@ const MovieList = ({ movies, onMovieClick }) => (
   </div>
 );
 
-MovieList.propTypes = {
+SearchResultsContainer.propTypes = {
   movies: PropTypes.arrayOf(movieType).isRequired,
   onMovieClick: PropTypes.func.isRequired,
 };
@@ -44,15 +43,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onMovieClick: (movie) => {
-    dispatch(openMovie(movie));
-    searchMovies(dispatch, movie.director, DIRECTOR);
-  },
+  onMovieClick: movie => dispatch(openMovie(movie)),
 });
 
-const SearchResultsContainer = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MovieList);
+)(SearchResultsContainer);
 
-export default SearchResultsContainer;

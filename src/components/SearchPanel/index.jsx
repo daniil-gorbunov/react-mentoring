@@ -6,19 +6,21 @@ import { Row, Col } from 'react-flexbox-grid';
 import { setSearchQuery, setSearchType, searchMovies } from '../../actions';
 import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
-import { TITLE, DIRECTOR } from '../../constants/searchTypes';
+import { MOVIE, TV_SHOW } from '../../constants/searchTypes';
 
 const searchTypesList = [
   {
-    title: 'title',
-    value: TITLE,
+    title: 'movie',
+    value: MOVIE,
   }, {
-    title: 'director',
-    value: DIRECTOR,
+    title: 'TV show',
+    value: TV_SHOW,
   },
 ];
 
-const Search = ({ searchType, searchQuery, onQueryChange, onSearchTypeClick, onSearchClick }) => (
+const SearchPanel = (
+  { searchType, searchQuery, onQueryChange, onSearchTypeClick, onSearchClick },
+) => (
   <div className={styles.searchPanel}>
     <Row className={commonStyles.row}>
       <Col xs={2}>
@@ -73,7 +75,7 @@ const Search = ({ searchType, searchQuery, onQueryChange, onSearchTypeClick, onS
   </div>
 );
 
-Search.propTypes = {
+SearchPanel.propTypes = {
   searchQuery: PropTypes.string.isRequired,
   searchType: PropTypes.string.isRequired,
   onQueryChange: PropTypes.func.isRequired,
@@ -92,9 +94,7 @@ const mapDispatchToProps = dispatch => ({
   onSearchClick: (searchQuery, searchType) => searchMovies(dispatch, searchQuery, searchType),
 });
 
-const SearchPanel = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Search);
-
-export default SearchPanel;
+)(SearchPanel);
