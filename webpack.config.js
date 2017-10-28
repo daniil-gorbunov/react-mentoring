@@ -13,7 +13,7 @@ module.exports = {
       'webpack-dev-server/client?http://localhost:5000',
       './index.jsx',
     ],
-    vendor: ['lodash', 'moment'],
+    vendor: ['axios', 'lodash', 'moment'],
   },
 
   output: {

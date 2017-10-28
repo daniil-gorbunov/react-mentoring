@@ -1,38 +1,53 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import MovieList from '../MovieList';
-import moviesService from '../../services/moviesService';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Row, Col } from 'react-flexbox-grid';
+import { openMovie } from '../../actions';
+import MoviePreview from '../MoviePreview';
+import styles from './style.less';
+import movieType from '../../types/movieType';
 
-class SearchResultsContainer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      movieList: [],
-    };
-  }
+const SearchResultsContainer = ({ movies, onMovieClick }) => (
+  <div className={styles.movieList}>
+    <Row>
+      {movies.length
+        ? movies.map(movie => (
+          <Col key={movie.id} xs={4}>
+            <div className={styles.moviePreviewContainer}>
+              <MoviePreview
+                movie={movie}
+                onMovieClick={onMovieClick}
+              />
+            </div>
+          </Col>
+        ))
+        : <Col xs={12}>
+          <Row center="xs">
+            <Col>
+              <div className={styles.notFound}>No films found</div>
+            </Col>
+          </Row>
+        </Col>
+      }
+    </Row>
+  </div>
+);
 
-  componentDidMount() {
-    moviesService.getMovies()
-      .then((movieList) => { this.setState({ movieList }); });
-  }
+SearchResultsContainer.propTypes = {
+  movies: PropTypes.arrayOf(movieType).isRequired,
+  onMovieClick: PropTypes.func.isRequired,
+};
 
-  render() {
-    return (
-      <div>
-        <Switch>
-          <Route exact path="/search/:searchQuery">
-            <MovieList movieList={this.state.movieList} />
-          </Route>
-          <Route exact path="/film/:filmName">
-            <MovieList movieList={this.state.movieList} />
-          </Route>
-          <Route path="/">
-            <MovieList movieList={[]} />
-          </Route>
-        </Switch>
-      </div>
-    );
-  }
-}
+const mapStateToProps = state => ({
+  movies: state.movies,
+});
 
-export default SearchResultsContainer;
+const mapDispatchToProps = dispatch => ({
+  onMovieClick: movie => dispatch(openMovie(movie)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SearchResultsContainer);
+

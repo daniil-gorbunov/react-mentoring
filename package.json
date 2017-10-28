@@ -12,9 +12,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.4",
     "lodash": "^4.17.4",
-    "moment": "^2.18.1",
+    "moment": "^2.19.1",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-flexbox-grid": "^1.1.5",
@@ -23,7 +25,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-form": "^7.0.4"
+    "redux-form": "^7.0.4",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

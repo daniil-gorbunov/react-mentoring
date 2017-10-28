@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import SearchPage from '../SearchPage';
 
-const App = () => (
+export default () => (
   <Router>
     <Grid>
       <Row>
@@ -14,5 +14,3 @@ const App = () => (
     </Grid>
   </Router>
 );
-
-export default App;
