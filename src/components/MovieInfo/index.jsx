@@ -39,7 +39,7 @@ export const MovieInfoView = ({ movie, onSearchClick }) => (
       <Col xs={8}>
         <div>
           <span className={styles.movieTitle}>{movie.original_title}</span>
-          <div className={styles.rating}>{movie.vote_average}</div>
+          <div className={styles.rating}>{movie.vote_average.toFixed(1)}</div>
         </div>
         <div>
           <span className={styles.category}>{movie.vote_count} votes</span>
