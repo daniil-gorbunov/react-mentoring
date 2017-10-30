@@ -20,7 +20,7 @@ export const testMovie = {
 };
 
 export const testMovieWoPosters = {
-  id: 1,
+  id: 2,
   title: 'Test Movie',
   original_title: 'Test Movie',
   name: 'Test Movie',

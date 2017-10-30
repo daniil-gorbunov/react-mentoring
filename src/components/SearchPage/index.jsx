@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flexbox-grid';
 import Header from '../Header';
-import SearchResultsContainer from '../SearchResultsContainer';
+import SearchResults from '../SearchResults';
 import Footer from '../Footer';
 
 const SearchPage = () => (
@@ -13,7 +13,7 @@ const SearchPage = () => (
     </Row>
     <Row>
       <Col xs={12}>
-        <SearchResultsContainer />
+        <SearchResults />
       </Col>
     </Row>
     <Row>

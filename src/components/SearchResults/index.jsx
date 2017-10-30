@@ -7,7 +7,7 @@ import MoviePreview from '../MoviePreview';
 import styles from './style.less';
 import movieType from '../../types/movieType';
 
-const SearchResultsContainer = ({ movies, onMovieClick }) => (
+export const SearchResultsView = ({ movies, onMovieClick }) => (
   <div className={styles.movieList}>
     <Row>
       {movies.length
@@ -33,7 +33,7 @@ const SearchResultsContainer = ({ movies, onMovieClick }) => (
   </div>
 );
 
-SearchResultsContainer.propTypes = {
+SearchResultsView.propTypes = {
   movies: PropTypes.arrayOf(movieType).isRequired,
   onMovieClick: PropTypes.func.isRequired,
 };
@@ -49,5 +49,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(SearchResultsContainer);
+)(SearchResultsView);
 
