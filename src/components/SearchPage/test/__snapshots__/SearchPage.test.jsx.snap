@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage renders correctly 1`] = `
+<div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <Header />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <SearchResults />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <Footer />
+    </div>
+  </div>
+</div>
+`;

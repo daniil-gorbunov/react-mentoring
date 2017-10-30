@@ -9,47 +9,47 @@ jest.mock('react-router-dom', () => ({ Link: 'Link' }));
 describe('SortPanel', () => {
   describe('renders search query', () => {
     test('empty', () => {
-      const preview = renderer.create(<SearchPanelView
+      const searchPanel = renderer.create(<SearchPanelView
         searchQuery={''}
         searchType={MOVIE}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}
         onSearchTypeClick={clickHandler}
       />);
-      expect(preview).toMatchSnapshot();
+      expect(searchPanel).toMatchSnapshot();
     });
 
     test('not empty', () => {
-      const preview = renderer.create(<SearchPanelView
+      const searchPanel = renderer.create(<SearchPanelView
         searchQuery={'kill bill'}
         searchType={TV_SHOW}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}
         onSearchTypeClick={clickHandler}
       />);
-      expect(preview).toMatchSnapshot();
+      expect(searchPanel).toMatchSnapshot();
     });
   });
 
   describe('renders search type', () => {
     test('movie', () => {
-      const preview = renderer.create(<SearchPanelView
+      const searchPanel = renderer.create(<SearchPanelView
         searchType={MOVIE}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}
         onSearchTypeClick={clickHandler}
       />);
-      expect(preview).toMatchSnapshot();
+      expect(searchPanel).toMatchSnapshot();
     });
 
     test('TV show', () => {
-      const preview = renderer.create(<SearchPanelView
+      const searchPanel = renderer.create(<SearchPanelView
         searchType={TV_SHOW}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}
         onSearchTypeClick={clickHandler}
       />);
-      expect(preview).toMatchSnapshot();
+      expect(searchPanel).toMatchSnapshot();
     });
   });
 });
