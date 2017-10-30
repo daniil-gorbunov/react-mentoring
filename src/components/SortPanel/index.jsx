@@ -29,7 +29,7 @@ export const SortPanelView = ({ sortType, movies, onSortTypeClick }) => (
           <span>Sort by</span>
           {sortOptionsList.map((option) => {
             const isActive = option.value === sortType;
-            const classStr = `${styles.sortingOption} ${isActive && styles.active}`;
+            const classStr = `${styles.sortingOption} ${isActive ? styles.active : ''}`;
             return (
               <button
                 key={option.value}
