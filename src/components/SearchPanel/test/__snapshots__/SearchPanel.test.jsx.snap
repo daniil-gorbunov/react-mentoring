@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortPanel renders search query empty 1`] = `
+<div
+  className="searchPanel"
+>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span
+        className="title"
+      >
+        netflixroulette
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <span
+        className="uppercase searchTitle"
+      >
+        Find your movie
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <div
+        className="inputContainer"
+      >
+        <input
+          className="searchInput"
+          onInput={[Function]}
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="searchControls"
+  >
+    <div
+      className="row row"
+    >
+      <div
+        className="col-xs-6"
+      >
+        <span
+          className="uppercase"
+        >
+          Search by
+        </span>
+        <button
+          className="active"
+          onClick={[Function]}
+        >
+          movie
+        </button>
+        <button
+          className=""
+          onClick={[Function]}
+        >
+          TV show
+        </button>
+      </div>
+      <div
+        className="col-xs-6"
+      >
+        <div
+          className="textRight"
+        >
+          <Link
+            to="/search/"
+          >
+            <button
+              className="active"
+              onClick={[Function]}
+            >
+              Search
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortPanel renders search query not empty 1`] = `
+<div
+  className="searchPanel"
+>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span
+        className="title"
+      >
+        netflixroulette
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <span
+        className="uppercase searchTitle"
+      >
+        Find your movie
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <div
+        className="inputContainer"
+      >
+        <input
+          className="searchInput"
+          onInput={[Function]}
+          placeholder="Search"
+          type="text"
+          value="kill bill"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="searchControls"
+  >
+    <div
+      className="row row"
+    >
+      <div
+        className="col-xs-6"
+      >
+        <span
+          className="uppercase"
+        >
+          Search by
+        </span>
+        <button
+          className=""
+          onClick={[Function]}
+        >
+          movie
+        </button>
+        <button
+          className="active"
+          onClick={[Function]}
+        >
+          TV show
+        </button>
+      </div>
+      <div
+        className="col-xs-6"
+      >
+        <div
+          className="textRight"
+        >
+          <Link
+            to="/search/kill%20bill"
+          >
+            <button
+              className="active"
+              onClick={[Function]}
+            >
+              Search
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortPanel renders search type TV show 1`] = `
+<div
+  className="searchPanel"
+>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span
+        className="title"
+      >
+        netflixroulette
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <span
+        className="uppercase searchTitle"
+      >
+        Find your movie
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <div
+        className="inputContainer"
+      >
+        <input
+          className="searchInput"
+          onInput={[Function]}
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="searchControls"
+  >
+    <div
+      className="row row"
+    >
+      <div
+        className="col-xs-6"
+      >
+        <span
+          className="uppercase"
+        >
+          Search by
+        </span>
+        <button
+          className=""
+          onClick={[Function]}
+        >
+          movie
+        </button>
+        <button
+          className="active"
+          onClick={[Function]}
+        >
+          TV show
+        </button>
+      </div>
+      <div
+        className="col-xs-6"
+      >
+        <div
+          className="textRight"
+        >
+          <Link
+            to="/search/"
+          >
+            <button
+              className="active"
+              onClick={[Function]}
+            >
+              Search
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortPanel renders search type movie 1`] = `
+<div
+  className="searchPanel"
+>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span
+        className="title"
+      >
+        netflixroulette
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <span
+        className="uppercase searchTitle"
+      >
+        Find your movie
+      </span>
+    </div>
+  </div>
+  <div
+    className="row row"
+  >
+    <div
+      className="col-xs-12"
+    >
+      <div
+        className="inputContainer"
+      >
+        <input
+          className="searchInput"
+          onInput={[Function]}
+          placeholder="Search"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="searchControls"
+  >
+    <div
+      className="row row"
+    >
+      <div
+        className="col-xs-6"
+      >
+        <span
+          className="uppercase"
+        >
+          Search by
+        </span>
+        <button
+          className="active"
+          onClick={[Function]}
+        >
+          movie
+        </button>
+        <button
+          className=""
+          onClick={[Function]}
+        >
+          TV show
+        </button>
+      </div>
+      <div
+        className="col-xs-6"
+      >
+        <div
+          className="textRight"
+        >
+          <Link
+            to="/search/"
+          >
+            <button
+              className="active"
+              onClick={[Function]}
+            >
+              Search
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

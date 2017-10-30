@@ -4,7 +4,6 @@ import { testMovie, testMovieWoPosters } from '../../../constants/stubs';
 import { SortPanelView } from '..';
 import { DATE, RATING } from '../../../constants/sortTypes';
 
-jest.mock('../../MoviePreview', () => 'MoviePreview');
 const clickHandler = jest.fn();
 
 describe('SortPanel', () => {
