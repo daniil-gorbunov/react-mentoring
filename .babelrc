@@ -12,5 +12,10 @@
   "plugins": [
     "transform-react-jsx",
     "react-hot-loader/babel"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["es2015", "stage-2", "react"]
+    }
+  }
 }
