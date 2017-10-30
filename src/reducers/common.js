@@ -9,7 +9,7 @@ import {
   CLEAR_SEARCH,
 } from '../constants/actionTypes';
 import { SORT_TYPE_PARAMS_MAP } from '../constants/sortTypes';
-import { MOVIE } from '../constants/searchTypes';
+import { DEFAULT_SEARCH_TYPE } from '../constants/searchTypes';
 
 export const searchQuery = (state = '', action) => {
   switch (action.type) {
@@ -22,7 +22,7 @@ export const searchQuery = (state = '', action) => {
   }
 };
 
-export const searchType = (state = MOVIE, action) => {
+export const searchType = (state = DEFAULT_SEARCH_TYPE, action) => {
   switch (action.type) {
     case CHANGE_SEARCH_TYPE:
       return action.searchType;

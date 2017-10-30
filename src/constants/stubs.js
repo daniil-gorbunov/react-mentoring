@@ -39,3 +39,8 @@ export const testMovieWoPosters = {
   origin_country: ['USA'],
   first_air_date: '2010-01-01',
 };
+
+export const testMovieList = [
+  testMovie,
+  testMovieWoPosters,
+];

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { testMovie, testMovieWoPosters } from '../../../constants/stubs';
+import { testMovieList } from '../../../constants/stubs';
 import { SortPanelView } from '..';
 import { DATE, RATING } from '../../../constants/sortTypes';
 
@@ -9,7 +9,7 @@ const clickHandler = jest.fn();
 describe('SortPanel', () => {
   test('renders with movies', () => {
     const sortPanel = renderer.create(<SortPanelView
-      movies={[testMovie, testMovieWoPosters]}
+      movies={testMovieList}
       onSortTypeClick={clickHandler}
     />);
     expect(sortPanel).toMatchSnapshot();

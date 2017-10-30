@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { testMovie, testMovieWoPosters } from '../../../constants/stubs';
+import { testMovieList } from '../../../constants/stubs';
 import { SearchResultsView } from '..';
 
 jest.mock('../../MoviePreview', () => 'MoviePreview');
@@ -9,7 +9,7 @@ const clickHandler = jest.fn();
 describe('SearchResults', () => {
   test('renders with movies', () => {
     const results = renderer.create(<SearchResultsView
-      movies={[testMovie, testMovieWoPosters]}
+      movies={testMovieList}
       onMovieClick={clickHandler}
     />);
     expect(results).toMatchSnapshot();
