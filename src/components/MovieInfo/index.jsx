@@ -10,7 +10,7 @@ import commonStyles from '../../assets/styles/common.less';
 import movieType from '../../types/movieType';
 import { IMG_URL, NO_IMAGE_PATH, POSTER_SIZE } from '../../constants/config';
 
-const MoviePreview = ({ movie, onSearchClick }) => (
+export const MovieInfoView = ({ movie, onSearchClick }) => (
 
   <div className={styles.movieInfo}>
     <Row className={commonStyles.row} between="xs">
@@ -59,7 +59,7 @@ const MoviePreview = ({ movie, onSearchClick }) => (
   </div>
 );
 
-MoviePreview.propTypes = {
+MovieInfoView.propTypes = {
   movie: movieType.isRequired,
   onSearchClick: PropTypes.func.isRequired,
 };
@@ -75,4 +75,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MoviePreview);
+)(MovieInfoView);

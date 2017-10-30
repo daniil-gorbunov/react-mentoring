@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<BrowserRouter>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-xs-12"
+      >
+        <Route
+          component={[Function]}
+          path="/"
+        />
+      </div>
+    </div>
+  </div>
+</BrowserRouter>
+`;

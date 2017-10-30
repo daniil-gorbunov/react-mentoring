@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviePreview renders with poster 1`] = `
+<div
+  className="moviePreview"
+>
+  <Link
+    onClick={[Function]}
+    to="/film/Test%20Movie"
+  >
+    <div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-12"
+        >
+          <div
+            className="row center-xs"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <img
+                alt="Test Movie"
+                className="poster"
+                src="http://image.tmdb.org/t/p/w342poster.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="textInfo"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-12"
+          >
+            <div
+              className="mainInfo"
+            >
+              <div
+                className="row between-xs"
+              >
+                <div
+                  className="col-xs-10"
+                >
+                  <span
+                    className="title"
+                  >
+                    Test Movie
+                  </span>
+                </div>
+                <div
+                  className="col-xs-2"
+                >
+                  <div
+                    className="textRight"
+                  >
+                    <span
+                      className="year"
+                    >
+                      2010
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Link>
+</div>
+`;
+
+exports[`MoviePreview renders without poster 1`] = `
+<div
+  className="moviePreview"
+>
+  <Link
+    onClick={[Function]}
+    to="/film/Test%20Movie"
+  >
+    <div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-12"
+        >
+          <div
+            className="row center-xs"
+          >
+            <div
+              className="col-xs-12"
+            >
+              <img
+                alt="Test Movie"
+                className="poster"
+                src="/src/assets/images/no-image.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="textInfo"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-xs-12"
+          >
+            <div
+              className="mainInfo"
+            >
+              <div
+                className="row between-xs"
+              >
+                <div
+                  className="col-xs-10"
+                >
+                  <span
+                    className="title"
+                  >
+                    Test Movie
+                  </span>
+                </div>
+                <div
+                  className="col-xs-2"
+                >
+                  <div
+                    className="textRight"
+                  >
+                    <span
+                      className="year"
+                    >
+                      2010
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Link>
+</div>
+`;
