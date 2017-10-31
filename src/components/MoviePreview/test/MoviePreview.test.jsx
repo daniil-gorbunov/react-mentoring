@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { testMovie, testMovieWoPosters } from '../../../constants/stubs';
 import MoviePreview from '..';
 
-jest.mock('react-router-dom', () => ({ Link: 'Link' }));
+const renderer = new ShallowRenderer();
 const clickHandler = jest.fn();
 
 describe('MoviePreview', () => {
   test('renders with poster', () => {
-    const preview = renderer.create(<MoviePreview
+    const preview = renderer.render(<MoviePreview
       movie={testMovie}
       onMovieClick={clickHandler}
     />);
@@ -16,7 +16,7 @@ describe('MoviePreview', () => {
   });
 
   test('renders without poster', () => {
-    const preview = renderer.create(<MoviePreview
+    const preview = renderer.render(<MoviePreview
       movie={testMovieWoPosters}
       onMovieClick={clickHandler}
     />);

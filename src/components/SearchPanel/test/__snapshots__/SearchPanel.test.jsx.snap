@@ -4,37 +4,37 @@ exports[`SortPanel renders search query empty 1`] = `
 <div
   className="searchPanel"
 >
-  <div
-    className="row row"
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-2"
+    <Col
+      xs={2}
     >
       <span
         className="title"
       >
         netflixroulette
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <span
         className="uppercase searchTitle"
       >
         Find your movie
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <div
         className="inputContainer"
@@ -47,16 +47,16 @@ exports[`SortPanel renders search query empty 1`] = `
           value=""
         />
       </div>
-    </div>
-  </div>
+    </Col>
+  </Row>
   <div
     className="searchControls"
   >
-    <div
-      className="row row"
+    <Row
+      className="row"
     >
-      <div
-        className="col-xs-6"
+      <Col
+        xs={6}
       >
         <span
           className="uppercase"
@@ -75,14 +75,15 @@ exports[`SortPanel renders search query empty 1`] = `
         >
           TV show
         </button>
-      </div>
-      <div
-        className="col-xs-6"
+      </Col>
+      <Col
+        xs={6}
       >
         <div
           className="textRight"
         >
           <Link
+            replace={false}
             to="/search/"
           >
             <button
@@ -93,8 +94,8 @@ exports[`SortPanel renders search query empty 1`] = `
             </button>
           </Link>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   </div>
 </div>
 `;
@@ -103,37 +104,37 @@ exports[`SortPanel renders search query not empty 1`] = `
 <div
   className="searchPanel"
 >
-  <div
-    className="row row"
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-2"
+    <Col
+      xs={2}
     >
       <span
         className="title"
       >
         netflixroulette
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <span
         className="uppercase searchTitle"
       >
         Find your movie
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <div
         className="inputContainer"
@@ -146,16 +147,16 @@ exports[`SortPanel renders search query not empty 1`] = `
           value="kill bill"
         />
       </div>
-    </div>
-  </div>
+    </Col>
+  </Row>
   <div
     className="searchControls"
   >
-    <div
-      className="row row"
+    <Row
+      className="row"
     >
-      <div
-        className="col-xs-6"
+      <Col
+        xs={6}
       >
         <span
           className="uppercase"
@@ -174,14 +175,15 @@ exports[`SortPanel renders search query not empty 1`] = `
         >
           TV show
         </button>
-      </div>
-      <div
-        className="col-xs-6"
+      </Col>
+      <Col
+        xs={6}
       >
         <div
           className="textRight"
         >
           <Link
+            replace={false}
             to="/search/kill%20bill"
           >
             <button
@@ -192,8 +194,8 @@ exports[`SortPanel renders search query not empty 1`] = `
             </button>
           </Link>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   </div>
 </div>
 `;
@@ -202,37 +204,37 @@ exports[`SortPanel renders search type TV show 1`] = `
 <div
   className="searchPanel"
 >
-  <div
-    className="row row"
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-2"
+    <Col
+      xs={2}
     >
       <span
         className="title"
       >
         netflixroulette
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <span
         className="uppercase searchTitle"
       >
         Find your movie
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <div
         className="inputContainer"
@@ -245,16 +247,16 @@ exports[`SortPanel renders search type TV show 1`] = `
           value=""
         />
       </div>
-    </div>
-  </div>
+    </Col>
+  </Row>
   <div
     className="searchControls"
   >
-    <div
-      className="row row"
+    <Row
+      className="row"
     >
-      <div
-        className="col-xs-6"
+      <Col
+        xs={6}
       >
         <span
           className="uppercase"
@@ -273,14 +275,15 @@ exports[`SortPanel renders search type TV show 1`] = `
         >
           TV show
         </button>
-      </div>
-      <div
-        className="col-xs-6"
+      </Col>
+      <Col
+        xs={6}
       >
         <div
           className="textRight"
         >
           <Link
+            replace={false}
             to="/search/"
           >
             <button
@@ -291,8 +294,8 @@ exports[`SortPanel renders search type TV show 1`] = `
             </button>
           </Link>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   </div>
 </div>
 `;
@@ -301,37 +304,37 @@ exports[`SortPanel renders search type movie 1`] = `
 <div
   className="searchPanel"
 >
-  <div
-    className="row row"
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-2"
+    <Col
+      xs={2}
     >
       <span
         className="title"
       >
         netflixroulette
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <span
         className="uppercase searchTitle"
       >
         Find your movie
       </span>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-12"
+    <Col
+      xs={12}
     >
       <div
         className="inputContainer"
@@ -344,16 +347,16 @@ exports[`SortPanel renders search type movie 1`] = `
           value=""
         />
       </div>
-    </div>
-  </div>
+    </Col>
+  </Row>
   <div
     className="searchControls"
   >
-    <div
-      className="row row"
+    <Row
+      className="row"
     >
-      <div
-        className="col-xs-6"
+      <Col
+        xs={6}
       >
         <span
           className="uppercase"
@@ -372,14 +375,15 @@ exports[`SortPanel renders search type movie 1`] = `
         >
           TV show
         </button>
-      </div>
-      <div
-        className="col-xs-6"
+      </Col>
+      <Col
+        xs={6}
       >
         <div
           className="textRight"
         >
           <Link
+            replace={false}
             to="/search/"
           >
             <button
@@ -390,8 +394,8 @@ exports[`SortPanel renders search type movie 1`] = `
             </button>
           </Link>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   </div>
 </div>
 `;

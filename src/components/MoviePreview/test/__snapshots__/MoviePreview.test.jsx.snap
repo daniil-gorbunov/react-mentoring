@@ -6,56 +6,53 @@ exports[`MoviePreview renders with poster 1`] = `
 >
   <Link
     onClick={[Function]}
+    replace={false}
     to="/film/Test%20Movie"
   >
     <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12"
+      <Row>
+        <Col
+          xs={12}
         >
-          <div
-            className="row center-xs"
+          <Row
+            center="xs"
           >
-            <div
-              className="col-xs-12"
+            <Col
+              xs={12}
             >
               <img
                 alt="Test Movie"
                 className="poster"
                 src="http://image.tmdb.org/t/p/w342poster.jpg"
               />
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
       <div
         className="textInfo"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-12"
+        <Row>
+          <Col
+            xs={12}
           >
             <div
               className="mainInfo"
             >
-              <div
-                className="row between-xs"
+              <Row
+                between="xs"
               >
-                <div
-                  className="col-xs-10"
+                <Col
+                  xs={10}
                 >
                   <span
                     className="title"
                   >
                     Test Movie
                   </span>
-                </div>
-                <div
-                  className="col-xs-2"
+                </Col>
+                <Col
+                  xs={2}
                 >
                   <div
                     className="textRight"
@@ -66,11 +63,11 @@ exports[`MoviePreview renders with poster 1`] = `
                       2010
                     </span>
                   </div>
-                </div>
-              </div>
+                </Col>
+              </Row>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     </div>
   </Link>
@@ -83,56 +80,53 @@ exports[`MoviePreview renders without poster 1`] = `
 >
   <Link
     onClick={[Function]}
+    replace={false}
     to="/film/Test%20Movie"
   >
     <div>
-      <div
-        className="row"
-      >
-        <div
-          className="col-xs-12"
+      <Row>
+        <Col
+          xs={12}
         >
-          <div
-            className="row center-xs"
+          <Row
+            center="xs"
           >
-            <div
-              className="col-xs-12"
+            <Col
+              xs={12}
             >
               <img
                 alt="Test Movie"
                 className="poster"
                 src="/src/assets/images/no-image.png"
               />
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
       <div
         className="textInfo"
       >
-        <div
-          className="row"
-        >
-          <div
-            className="col-xs-12"
+        <Row>
+          <Col
+            xs={12}
           >
             <div
               className="mainInfo"
             >
-              <div
-                className="row between-xs"
+              <Row
+                between="xs"
               >
-                <div
-                  className="col-xs-10"
+                <Col
+                  xs={10}
                 >
                   <span
                     className="title"
                   >
                     Test Movie
                   </span>
-                </div>
-                <div
-                  className="col-xs-2"
+                </Col>
+                <Col
+                  xs={2}
                 >
                   <div
                     className="textRight"
@@ -143,11 +137,11 @@ exports[`MoviePreview renders without poster 1`] = `
                       2010
                     </span>
                   </div>
-                </div>
-              </div>
+                </Col>
+              </Row>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
     </div>
   </Link>

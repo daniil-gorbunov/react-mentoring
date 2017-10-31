@@ -4,27 +4,23 @@ exports[`SearchResults renders with empty movie list 1`] = `
 <div
   className="movieList"
 >
-  <div
-    className="row"
-  >
-    <div
-      className="col-xs-12"
+  <Row>
+    <Col
+      xs={12}
     >
-      <div
-        className="row center-xs"
+      <Row
+        center="xs"
       >
-        <div
-          className=""
-        >
+        <Col>
           <div
             className="notFound"
           >
             No films found
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </Col>
+      </Row>
+    </Col>
+  </Row>
 </div>
 `;
 
@@ -32,11 +28,9 @@ exports[`SearchResults renders with movies 1`] = `
 <div
   className="movieList"
 >
-  <div
-    className="row"
-  >
-    <div
-      className="col-xs-4"
+  <Row>
+    <Col
+      xs={4}
     >
       <div
         className="moviePreviewContainer"
@@ -71,9 +65,9 @@ exports[`SearchResults renders with movies 1`] = `
           onMovieClick={[Function]}
         />
       </div>
-    </div>
-    <div
-      className="col-xs-4"
+    </Col>
+    <Col
+      xs={4}
     >
       <div
         className="moviePreviewContainer"
@@ -108,7 +102,7 @@ exports[`SearchResults renders with movies 1`] = `
           onMovieClick={[Function]}
         />
       </div>
-    </div>
-  </div>
+    </Col>
+  </Row>
 </div>
 `;

@@ -1,15 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import App from '..';
 
-jest.mock('react-router-dom', () => ({
-  BrowserRouter: 'BrowserRouter',
-  Route: 'Route',
-}));
+const renderer = new ShallowRenderer();
 
 describe('App', () => {
   test('renders correctly', () => {
-    const app = renderer.create(<App />);
+    const app = renderer.render(<App />);
     expect(app).toMatchSnapshot();
   });
 });

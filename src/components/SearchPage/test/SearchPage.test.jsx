@@ -1,14 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import SearchPage from '..';
 
-jest.mock('../../Header', () => 'Header');
-jest.mock('../../SearchResults', () => 'SearchResults');
-jest.mock('../../Footer', () => 'Footer');
+const renderer = new ShallowRenderer();
 
 describe('SearchPage', () => {
   test('renders correctly', () => {
-    const searchPage = renderer.create(<SearchPage />);
+    const searchPage = renderer.render(<SearchPage />);
     expect(searchPage).toMatchSnapshot();
   });
 });

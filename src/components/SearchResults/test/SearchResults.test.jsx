@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { testMovieList } from '../../../constants/stubs';
 import { SearchResultsView } from '..';
 
-jest.mock('../../MoviePreview', () => 'MoviePreview');
+const renderer = new ShallowRenderer();
 const clickHandler = jest.fn();
 
 describe('SearchResults', () => {
   test('renders with movies', () => {
-    const results = renderer.create(<SearchResultsView
+    const results = renderer.render(<SearchResultsView
       movies={testMovieList}
       onMovieClick={clickHandler}
     />);
@@ -16,7 +16,7 @@ describe('SearchResults', () => {
   });
 
   test('renders with empty movie list', () => {
-    const preview = renderer.create(<SearchResultsView
+    const preview = renderer.render(<SearchResultsView
       movies={[]}
       onMovieClick={clickHandler}
     />);

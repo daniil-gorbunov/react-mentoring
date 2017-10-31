@@ -1,14 +1,14 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { MovieInfoView } from '..';
 import { testMovie } from '../../../constants/stubs';
 
-jest.mock('react-router-dom', () => ({ Link: 'Link' }));
+const renderer = new ShallowRenderer();
 const clickHandler = jest.fn();
 
 describe('MovieInfo', () => {
   test('renders correctly', () => {
-    const movieInfo = renderer.create(<MovieInfoView
+    const movieInfo = renderer.render(<MovieInfoView
       movie={testMovie}
       onSearchClick={clickHandler}
     />);

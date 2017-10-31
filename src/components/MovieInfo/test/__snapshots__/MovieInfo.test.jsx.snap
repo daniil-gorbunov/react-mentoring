@@ -4,25 +4,27 @@ exports[`MovieInfo renders correctly 1`] = `
 <div
   className="movieInfo"
 >
-  <div
-    className="row row between-xs"
+  <Row
+    between="xs"
+    className="row"
   >
-    <div
-      className="col-xs-2"
+    <Col
+      xs={2}
     >
       <span
         className="title"
       >
         netflixroulette
       </span>
-    </div>
-    <div
-      className="col-xs-2"
+    </Col>
+    <Col
+      xs={2}
     >
       <div
         className="textRight"
       >
         <Link
+          replace={false}
           to="/"
         >
           <button
@@ -33,22 +35,22 @@ exports[`MovieInfo renders correctly 1`] = `
           </button>
         </Link>
       </div>
-    </div>
-  </div>
-  <div
-    className="row row"
+    </Col>
+  </Row>
+  <Row
+    className="row"
   >
-    <div
-      className="col-xs-4"
+    <Col
+      xs={4}
     >
       <img
         alt="Test Movie"
         className="poster"
         src="http://image.tmdb.org/t/p/w342poster.jpg"
       />
-    </div>
-    <div
-      className="col-xs-8"
+    </Col>
+    <Col
+      xs={8}
     >
       <div>
         <span
@@ -59,7 +61,7 @@ exports[`MovieInfo renders correctly 1`] = `
         <div
           className="rating"
         >
-          5
+          5.0
         </div>
       </div>
       <div>
@@ -96,7 +98,7 @@ exports[`MovieInfo renders correctly 1`] = `
           english
         </p>
       </div>
-    </div>
-  </div>
+    </Col>
+  </Row>
 </div>
 `;

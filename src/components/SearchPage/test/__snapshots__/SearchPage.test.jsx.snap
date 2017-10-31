@@ -2,32 +2,26 @@
 
 exports[`SearchPage renders correctly 1`] = `
 <div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-xs-12"
+  <Row>
+    <Col
+      xs={12}
     >
       <Header />
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-xs-12"
+    </Col>
+  </Row>
+  <Row>
+    <Col
+      xs={12}
     >
-      <SearchResults />
-    </div>
-  </div>
-  <div
-    className="row"
-  >
-    <div
-      className="col-xs-12"
+      <Connect(SearchResultsView) />
+    </Col>
+  </Row>
+  <Row>
+    <Col
+      xs={12}
     >
       <Footer />
-    </div>
-  </div>
+    </Col>
+  </Row>
 </div>
 `;

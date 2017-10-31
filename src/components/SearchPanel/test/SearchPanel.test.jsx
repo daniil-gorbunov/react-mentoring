@@ -1,15 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { SearchPanelView } from '..';
 import { TV_SHOW, MOVIE } from '../../../constants/searchTypes';
 
+const renderer = new ShallowRenderer();
 const clickHandler = jest.fn();
-jest.mock('react-router-dom', () => ({ Link: 'Link' }));
 
 describe('SortPanel', () => {
   describe('renders search query', () => {
     test('empty', () => {
-      const searchPanel = renderer.create(<SearchPanelView
+      const searchPanel = renderer.render(<SearchPanelView
         searchQuery={''}
         searchType={MOVIE}
         onQueryChange={clickHandler}
@@ -20,7 +20,7 @@ describe('SortPanel', () => {
     });
 
     test('not empty', () => {
-      const searchPanel = renderer.create(<SearchPanelView
+      const searchPanel = renderer.render(<SearchPanelView
         searchQuery={'kill bill'}
         searchType={TV_SHOW}
         onQueryChange={clickHandler}
@@ -33,7 +33,7 @@ describe('SortPanel', () => {
 
   describe('renders search type', () => {
     test('movie', () => {
-      const searchPanel = renderer.create(<SearchPanelView
+      const searchPanel = renderer.render(<SearchPanelView
         searchType={MOVIE}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}
@@ -43,7 +43,7 @@ describe('SortPanel', () => {
     });
 
     test('TV show', () => {
-      const searchPanel = renderer.create(<SearchPanelView
+      const searchPanel = renderer.render(<SearchPanelView
         searchType={TV_SHOW}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}

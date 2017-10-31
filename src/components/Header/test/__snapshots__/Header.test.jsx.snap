@@ -9,16 +9,16 @@ exports[`Header renders correctly 1`] = `
       <Route
         path="/film/:filmName"
       >
-        <MovieInfo
+        <Connect(MovieInfoView)
           movie={null}
         />
       </Route>
       <Route
-        component="SearchPanel"
+        component={[Function]}
         path="/search/:searchQuery"
       />
       <Route
-        component="SearchPanel"
+        component={[Function]}
         path="/"
       />
     </Switch>
@@ -28,11 +28,11 @@ exports[`Header renders correctly 1`] = `
   >
     <Switch>
       <Route
-        component="SortPanel"
+        component={[Function]}
         path="/film/:filmName"
       />
       <Route
-        component="SortPanel"
+        component={[Function]}
         path="/search/:searchQuery"
       />
     </Switch>
