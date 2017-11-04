@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortPanel renders sort by date 1`] = `
+<div
+  className="sortPanel"
+>
+  <div
+    className="row between-xs"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span>
+        0
+         movies found
+      </span>
+    </div>
+    <div
+      className="col-xs-4"
+    >
+      <div
+        className="textRight"
+      >
+        <span>
+          Sort by
+        </span>
+        <button
+          className="sortingOption active"
+          href="#"
+          onClick={[Function]}
+        >
+          release date
+        </button>
+        <button
+          className="sortingOption "
+          href="#"
+          onClick={[Function]}
+        >
+          rating
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortPanel renders sort by rating 1`] = `
+<div
+  className="sortPanel"
+>
+  <div
+    className="row between-xs"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span>
+        0
+         movies found
+      </span>
+    </div>
+    <div
+      className="col-xs-4"
+    >
+      <div
+        className="textRight"
+      >
+        <span>
+          Sort by
+        </span>
+        <button
+          className="sortingOption "
+          href="#"
+          onClick={[Function]}
+        >
+          release date
+        </button>
+        <button
+          className="sortingOption active"
+          href="#"
+          onClick={[Function]}
+        >
+          rating
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortPanel renders with empty movie list 1`] = `
+<div
+  className="sortPanel"
+>
+  <div
+    className="row between-xs"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span>
+        0
+         movies found
+      </span>
+    </div>
+    <div
+      className="col-xs-4"
+    >
+      <div
+        className="textRight"
+      >
+        <span>
+          Sort by
+        </span>
+        <button
+          className="sortingOption "
+          href="#"
+          onClick={[Function]}
+        >
+          release date
+        </button>
+        <button
+          className="sortingOption "
+          href="#"
+          onClick={[Function]}
+        >
+          rating
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SortPanel renders with movies 1`] = `
+<div
+  className="sortPanel"
+>
+  <div
+    className="row between-xs"
+  >
+    <div
+      className="col-xs-2"
+    >
+      <span>
+        2
+         movies found
+      </span>
+    </div>
+    <div
+      className="col-xs-4"
+    >
+      <div
+        className="textRight"
+      >
+        <span>
+          Sort by
+        </span>
+        <button
+          className="sortingOption "
+          href="#"
+          onClick={[Function]}
+        >
+          release date
+        </button>
+        <button
+          className="sortingOption "
+          href="#"
+          onClick={[Function]}
+        >
+          rating
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieInfo renders correctly 1`] = `
+<div
+  className="movieInfo"
+>
+  <Row
+    between="xs"
+    className="row"
+  >
+    <Col
+      xs={2}
+    >
+      <span
+        className="title"
+      >
+        netflixroulette
+      </span>
+    </Col>
+    <Col
+      xs={2}
+    >
+      <div
+        className="textRight"
+      >
+        <Link
+          replace={false}
+          to="/"
+        >
+          <button
+            className="searchBtn"
+            onClick={[Function]}
+          >
+            Search
+          </button>
+        </Link>
+      </div>
+    </Col>
+  </Row>
+  <Row
+    className="row"
+  >
+    <Col
+      xs={4}
+    >
+      <img
+        alt="Test Movie"
+        className="poster"
+        src="http://image.tmdb.org/t/p/w342poster.jpg"
+      />
+    </Col>
+    <Col
+      xs={8}
+    >
+      <div>
+        <span
+          className="movieTitle"
+        >
+          Test Movie
+        </span>
+        <div
+          className="rating"
+        >
+          5.0
+        </div>
+      </div>
+      <div>
+        <span
+          className="category"
+        >
+          100
+           votes
+        </span>
+      </div>
+      <div
+        className="subHeader"
+      >
+        <span
+          className="year"
+        >
+          2010
+        </span>
+      </div>
+      <div>
+        <p>
+          Overview mocked
+        </p>
+      </div>
+      <div
+        className="cast"
+      >
+        <p>
+          Popularity: 
+          100
+        </p>
+        <p>
+          Language: 
+          english
+        </p>
+      </div>
+    </Col>
+  </Row>
+</div>
+`;

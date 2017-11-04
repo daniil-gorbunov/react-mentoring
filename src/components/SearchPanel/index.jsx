@@ -18,7 +18,7 @@ const searchTypesList = [
   },
 ];
 
-const SearchPanel = (
+export const SearchPanelView = (
   { searchType, searchQuery, onQueryChange, onSearchTypeClick, onSearchClick },
 ) => (
   <div className={styles.searchPanel}>
@@ -54,7 +54,7 @@ const SearchPanel = (
             return (
               <button
                 key={type.value}
-                className={`${isActive && styles.active}`}
+                className={`${isActive ? styles.active : ''}`}
                 onClick={() => onSearchTypeClick(type.value)}
               >{type.title}</button>
             );
@@ -75,12 +75,16 @@ const SearchPanel = (
   </div>
 );
 
-SearchPanel.propTypes = {
-  searchQuery: PropTypes.string.isRequired,
+SearchPanelView.propTypes = {
+  searchQuery: PropTypes.string,
   searchType: PropTypes.string.isRequired,
   onQueryChange: PropTypes.func.isRequired,
   onSearchTypeClick: PropTypes.func.isRequired,
   onSearchClick: PropTypes.func.isRequired,
+};
+
+SearchPanelView.defaultProps = {
+  searchQuery: '',
 };
 
 const mapStateToProps = state => ({
@@ -97,4 +101,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(SearchPanel);
+)(SearchPanelView);

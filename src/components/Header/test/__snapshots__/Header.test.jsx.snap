@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div>
+  <div
+    className="header"
+  >
+    <Switch>
+      <Route
+        path="/film/:filmName"
+      >
+        <Connect(MovieInfoView)
+          movie={null}
+        />
+      </Route>
+      <Route
+        component={[Function]}
+        path="/search/:searchQuery"
+      />
+      <Route
+        component={[Function]}
+        path="/"
+      />
+    </Switch>
+  </div>
+  <div
+    className="subHeaderContainer"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/film/:filmName"
+      />
+      <Route
+        component={[Function]}
+        path="/search/:searchQuery"
+      />
+    </Switch>
+  </div>
+</div>
+`;

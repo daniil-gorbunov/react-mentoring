@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage renders correctly 1`] = `
+<div>
+  <Row>
+    <Col
+      xs={12}
+    >
+      <Header />
+    </Col>
+  </Row>
+  <Row>
+    <Col
+      xs={12}
+    >
+      <Connect(SearchResultsView) />
+    </Col>
+  </Row>
+  <Row>
+    <Col
+      xs={12}
+    >
+      <Footer />
+    </Col>
+  </Row>
+</div>
+`;

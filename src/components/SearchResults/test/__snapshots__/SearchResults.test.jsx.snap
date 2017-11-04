@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults renders with empty movie list 1`] = `
+<div
+  className="movieList"
+>
+  <Row>
+    <Col
+      xs={12}
+    >
+      <Row
+        center="xs"
+      >
+        <Col>
+          <div
+            className="notFound"
+          >
+            No films found
+          </div>
+        </Col>
+      </Row>
+    </Col>
+  </Row>
+</div>
+`;
+
+exports[`SearchResults renders with movies 1`] = `
+<div
+  className="movieList"
+>
+  <Row>
+    <Col
+      xs={4}
+    >
+      <div
+        className="moviePreviewContainer"
+      >
+        <MoviePreview
+          movie={
+            Object {
+              "adult": false,
+              "backdrop_path": "backdrop.jpg",
+              "first_air_date": "2010-01-01",
+              "genre_ids": Array [
+                1,
+              ],
+              "id": 1,
+              "name": "Test Movie",
+              "origin_country": Array [
+                "USA",
+              ],
+              "original_language": "english",
+              "original_name": "Test Movie",
+              "original_title": "Test Movie",
+              "overview": "Overview mocked",
+              "popularity": 100,
+              "poster_path": "poster.jpg",
+              "release_date": "2010-01-01",
+              "title": "Test Movie",
+              "video": true,
+              "vote_average": 5,
+              "vote_count": 100,
+            }
+          }
+          onMovieClick={[Function]}
+        />
+      </div>
+    </Col>
+    <Col
+      xs={4}
+    >
+      <div
+        className="moviePreviewContainer"
+      >
+        <MoviePreview
+          movie={
+            Object {
+              "adult": false,
+              "backdrop_path": null,
+              "first_air_date": "2010-01-01",
+              "genre_ids": Array [
+                1,
+              ],
+              "id": 2,
+              "name": "Test Movie",
+              "origin_country": Array [
+                "USA",
+              ],
+              "original_language": "english",
+              "original_name": "Test Movie",
+              "original_title": "Test Movie",
+              "overview": "Overview mocked",
+              "popularity": 100,
+              "poster_path": null,
+              "release_date": "2010-01-01",
+              "title": "Test Movie",
+              "video": true,
+              "vote_average": 5,
+              "vote_count": 100,
+            }
+          }
+          onMovieClick={[Function]}
+        />
+      </div>
+    </Col>
+  </Row>
+</div>
+`;
