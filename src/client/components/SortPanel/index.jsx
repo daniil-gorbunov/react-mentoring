@@ -36,7 +36,9 @@ export const SortPanelView = ({ sortType, movies, onSortTypeClick }) => (
                 className={classStr}
                 onClick={() => onSortTypeClick(movies, option.value)}
                 href="#"
-              >{option.title}</button>
+              >
+                {option.title}
+              </button>
             );
           })}
         </div>

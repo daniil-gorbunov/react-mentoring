@@ -7,7 +7,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import { clearSearch } from '../../actions';
 import styles from './style.less';
 import commonStyles from '../../assets/styles/common.less';
-import movieType from '../../types/movieType';
+import { movieShape } from '../../types/movieType';
 import { IMG_URL, NO_IMAGE_PATH, POSTER_SIZE } from '../../constants/config';
 
 export const MovieInfoView = ({ movie, onSearchClick }) => (
@@ -23,7 +23,9 @@ export const MovieInfoView = ({ movie, onSearchClick }) => (
             <button
               className={styles.searchBtn}
               onClick={onSearchClick}
-            >Search</button>
+            >
+              Search
+            </button>
           </Link>
         </div>
       </Col>
@@ -60,7 +62,7 @@ export const MovieInfoView = ({ movie, onSearchClick }) => (
 );
 
 MovieInfoView.propTypes = {
-  movie: movieType.isRequired,
+  movie: PropTypes.shape(movieShape).isRequired,
   onSearchClick: PropTypes.func.isRequired,
 };
 

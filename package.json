@@ -7,8 +7,10 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "dev": "webpack -d",
+    "start": "yarn dev && yarn server",
     "dev-server": "webpack-dev-server",
-    "server": "node ./server/index.js",
+    "server": "babel-node ./src/server",
     "test": "jest"
   },
   "dependencies": {
@@ -25,10 +27,10 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-form": "^7.0.4",
-    "redux-thunk": "^2.2.0"
+    "redux-form": "^7.0.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",

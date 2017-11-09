@@ -10,7 +10,7 @@ describe('SortPanel', () => {
   describe('renders search query', () => {
     test('empty', () => {
       const searchPanel = renderer.render(<SearchPanelView
-        searchQuery={''}
+        searchQuery=""
         searchType={MOVIE}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}
@@ -21,7 +21,7 @@ describe('SortPanel', () => {
 
     test('not empty', () => {
       const searchPanel = renderer.render(<SearchPanelView
-        searchQuery={'kill bill'}
+        searchQuery="kill bill"
         searchType={TV_SHOW}
         onQueryChange={clickHandler}
         onSearchClick={clickHandler}

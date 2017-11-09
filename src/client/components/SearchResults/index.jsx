@@ -21,7 +21,8 @@ export const SearchResultsView = ({ movies, onMovieClick }) => (
             </div>
           </Col>
         ))
-        : <Col xs={12}>
+        :
+        <Col xs={12}>
           <Row center="xs">
             <Col>
               <div className={styles.notFound}>No films found</div>

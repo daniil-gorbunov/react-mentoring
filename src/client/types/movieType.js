@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default PropTypes.shape({
+export const movieShape = {
   id: PropTypes.number,
   title: PropTypes.string,
   original_title: PropTypes.string,
@@ -19,4 +19,6 @@ export default PropTypes.shape({
   video: PropTypes.bool,
   origin_country: PropTypes.array,
   first_air_date: PropTypes.string,
-});
+};
+
+export default PropTypes.shape(movieShape);

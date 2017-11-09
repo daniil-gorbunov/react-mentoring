@@ -18,9 +18,9 @@ const searchTypesList = [
   },
 ];
 
-export const SearchPanelView = (
-  { searchType, searchQuery, onQueryChange, onSearchTypeClick, onSearchClick },
-) => (
+export const SearchPanelView = ({
+  searchType, searchQuery, onQueryChange, onSearchTypeClick, onSearchClick,
+}) => (
   <div className={styles.searchPanel}>
     <Row className={commonStyles.row}>
       <Col xs={2}>
@@ -56,7 +56,9 @@ export const SearchPanelView = (
                 key={type.value}
                 className={`${isActive ? styles.active : ''}`}
                 onClick={() => onSearchTypeClick(type.value)}
-              >{type.title}</button>
+              >
+                {type.title}
+              </button>
             );
           })}
         </Col>
@@ -66,7 +68,9 @@ export const SearchPanelView = (
               <button
                 className={styles.active}
                 onClick={() => { onSearchClick(searchQuery, searchType); }}
-              >Search</button>
+              >
+                Search
+              </button>
             </Link>
           </div>
         </Col>
