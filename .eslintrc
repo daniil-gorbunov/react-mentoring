@@ -5,7 +5,7 @@
     "linebreak-style": "off",
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
-      "aspects": [ "invalidHref" ]
+      "specialLink": ["to"]
     }]
   },
   "env": {
